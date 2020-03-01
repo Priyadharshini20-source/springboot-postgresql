@@ -12,7 +12,7 @@ RUN java -version
 RUN echo $JAVA_HOME
 RUN echo $PATH
 WORKDIR /app
-ADD ${PWD}/springboot-postgresql /app/springboot-postgresql
+ADD /home/ansadmin/springboot-postgresql/springboot-postgresql /app/springboot-postgresql
 WORKDIR /app/springboot-postgresql
 RUN ./gradlew clean build
 VOLUME ["/app"]
