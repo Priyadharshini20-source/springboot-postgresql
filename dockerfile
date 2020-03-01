@@ -14,6 +14,7 @@ RUN echo $PATH
 WORKDIR /app
 ADD springboot-postgresql/ /app/springboot-postgresql
 WORKDIR /app/springboot-postgresql
+RUN ls -ltr
 RUN ./gradlew clean build
 VOLUME ["/app"]
 ENTRYPOINT ["java","-jar","build/libs/springboot-postgresql-0.0.1-SNAPSHOT.jar"]
