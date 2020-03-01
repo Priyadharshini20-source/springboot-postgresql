@@ -6,7 +6,7 @@ RUN yum install -y \
 WORKDIR /app
 RUN export PATH=$PATH/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/bin
 RUN echo "JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")" | tee -a /etc/profile && source /etc/profile && echo java_home is $JAVA_HOME \ /etc/profile && echo java_home is $JAVA_HOME
-ENV PATH="/usr/lib/jvm/ java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre:${PATH}"
+ENV PATH="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre:${PATH}"
 ENV JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre"
 RUN java -version
 RUN echo $JAVA_HOME
